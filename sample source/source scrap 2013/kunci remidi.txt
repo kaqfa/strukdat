@@ -1,0 +1,155 @@
+int NbElmt(Stack S) {
+    int jum = 0;
+    address P;
+
+    if(IsEmpty(S)) {
+        return jum;
+    } else {
+        P = TOP(S);
+        while(P!=Nil) {
+            jum++;
+            P = Next(P);
+        }
+    }
+    return jum;
+}
+
+void Push(Stack *S, infotype X) {
+    address P;
+
+    Alokasi(&P,X);
+    if(IsEmpty(*S)) {
+        TOP(*S) = P;
+    } else if(IsFull(*S)) {
+        printf("Stack penuh\n");
+    } else {
+        Next(P) = TOP(*S);
+        TOP(*S) = P;
+    }
+}
+
+void Pop(Stack *S, infotype *X) {
+    address P;
+
+    if(IsEmpty(*S)) {
+        printf("Stack kosong\n");
+    } else {
+        P = TOP(*S);
+        *X = Info(P);
+        if(Next(P)==Nil) {
+            TOP(*S) = Nil;
+        } else {
+            TOP(*S) = Next(TOP(*S));
+        }
+        Next(P) = Nil;
+        Dealokasi(&P);
+    }
+}
+
+void PrintInfo(Stack S) {
+    address P;
+
+    if(IsEmpty(S)) {
+        printf("Stack kosong\n");
+    } else {
+        P = TOP(S);
+        do {
+            printf("|%d| ", Info(P));
+            P = Next(P);
+        }
+        while(P!=Nil);
+    }
+}
+
+
+int NBElmt(Queue Q)
+{
+    int jml=0;
+    address P;
+
+    P=HEAD(Q);
+    while(P!=Nil)
+    {
+        jml=jml+1;
+        P=Next(P);
+    }
+    return jml;
+}
+
+void Add(Queue *Q, infotype X)
+{
+    address P;
+
+    Alokasi(&P,X);
+    if(P!=Nil)
+    {
+        if(IsFull(*Q))
+        {
+            printf("Queue penuh. Tidak bisa diisi lagi.");
+        }
+        else
+        {
+            if(IsEmpty(*Q))
+            {
+                HEAD(*Q)=P;
+                TAIL(*Q)=P;
+                Next(TAIL(*Q))=Nil;
+            }
+            else
+            {
+                Next(TAIL(*Q))=P;
+                TAIL(*Q)=P;
+                Next(TAIL(*Q))=Nil;
+            }
+        }
+    }
+    else
+    {
+        P==Nil;
+    }
+}
+
+void Del(Queue *Q, infotype *X)
+{
+    address P;
+
+    if(IsEmpty(*Q))
+    {
+        printf("Stack Kosong");
+    }
+    else if(HEAD(*Q)==TAIL(*Q))
+        {
+            P=HEAD(*Q);
+            (*X)=Info(P);
+            HEAD(*Q)=Nil;
+            TAIL(*Q)=Nil;
+        }
+        else
+        {
+            P=HEAD(*Q);
+            (*X)=Info(P);
+            HEAD(*Q)=Next(P);
+            Next(P)=Nil;
+        }
+    Dealokasi(&P);
+}
+
+void PrintInfo(Queue Q)
+{
+    address P;
+
+    if(IsEmpty(Q))
+    {
+        printf("Queue Kosong");
+    }
+    else
+    {
+        P=HEAD(Q);
+        while(P!=Nil)
+        {
+            printf("|%d|",Info(P));
+            P=Next(P);
+        }
+    }
+
+}
