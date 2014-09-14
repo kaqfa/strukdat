@@ -4,7 +4,7 @@
 	<head>
 		<meta charset="utf-8">
 
-		<title>reveal.js - The HTML Presentation Framework</title>
+		<title>StrukDat 1 - Pengenalan Java untuk Pemula</title>
 
 		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
 		<meta name="author" content="Hakim El Hattab">
@@ -35,7 +35,7 @@
 		.reveal code{font-weight: bold; color: #FF0}
 		.reveal pre code{font-weight: bold; color: inherit;}
 		.reveal .code_title{font-size: 50%; margin-right: 6%; font-style: italic; text-align: right; color: #D9FFFC;}
-		.reveal .footnote{font-size: 65%; font-style: italic; text-align: left; color: #ff0; line-height: 110%;}
+		.reveal .footnote{font-size: 65%; font-style: italic; text-align: left; color: #ff0; line-height: 130%;}
 		</style>
 
 		<!--[if lt IE 9]>
@@ -245,6 +245,66 @@ Mahasiswa.java <!-- .element: class="code_title" -->
 
 ### Kondisi &amp; Perulangan
 
+- Sama seperti Bahasa C, dalam Java untuk kondisi masih menggunakan
+  kata perintah `if (kondisi) { aksi }`.
+- Operator pembanding yang digunakan pun masih sama `==`, `!=`, `<`, `>`, `<=`, `>=`.
+- Operator logis tetap saja menggunakan `&&` untuk logika AND dan `||` untuk OR.
+- Begitu juga untuk perulangan, kita tetap memiliki perintah 
+  - `for(inisial, kondisi, increment){ }`,
+  - `while(kondisi){ }`, 
+  - dan `do{ } while(kondisi);`
+
+--
+
+Mahasiswa.java <!-- .element: class="code_title" -->
+
+```java
+// ... kode sebelumnya
+	void nilaiHuruf(int nilAngka){
+		if(nilAngka >= 85) 
+			System.out.print("A");
+		else if(nilAngka >= 70) 
+			System.out.print("B");
+		else if(nilAngka >= 60) 
+			System.out.print("C");
+		else if(nilAngka >= 50) 
+			System.out.print("D");
+		else
+			System.out.print("E");
+	}
+
+	void berhitung(int sebanyak){
+		for(int i = 0; i < sebanyak; i++){
+			System.out.println("Berhitung ke: "+(i+1));
+		}
+	}
+// ... kode sesudahnya
+```
+
+--
+
+### Membandingkan String
+
+- Khusus untuk String, jika dalam bahasa C kita harus menggunakan fungsi
+  `strcmp()` yang didapatkan dari `String.h`, di dalam Java kita bisa menggunakan
+  `varString.equals("String yang dibandingkan")`
+- Bisa juga menggunakan `varString.equalsIgnoreCase("String yang dibandingkan")`
+  untuk membandingkan String tanpa menghiraukan besar kecil hurufnya.
+
+Mahasiswa.java <!-- .element: class="code_title" -->
+
+```java
+
+	void login(String inputEmail, String inputPassword){
+		if(inputEmail.equalsIgnoreCase(this.email)
+			&& inputPassword.equals(this.password) ){
+			System.out.print("Login sesuai, silahkan masuk");
+		} else {
+			System.out.print("Login tidak sesuai, silahkan ulangi");
+		}
+	}
+
+```
 
 ---
 
@@ -256,7 +316,7 @@ Mahasiswa.java <!-- .element: class="code_title" -->
 
 ---
 
-### 
+### Lebih Mudah Java dibandingkan C
 
 
 		</script>
