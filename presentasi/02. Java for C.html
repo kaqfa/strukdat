@@ -31,6 +31,13 @@
 			}
 		</script>
 
+		<style type="text/css">
+		.reveal code{font-weight: bold; color: #FF0}
+		.reveal pre code{font-weight: bold; color: inherit;}
+		.reveal .code_title{font-size: 50%; margin-right: 6%; font-style: italic; text-align: right; color: #D9FFFC;}
+		.reveal .footnote{font-size: 65%; font-style: italic; text-align: left; color: #ff0; line-height: 110%;}
+		</style>
+
 		<!--[if lt IE 9]>
 		<script src="lib/js/html5shiv.js"></script>
 		<![endif]-->
@@ -42,17 +49,16 @@
 
 			<!-- Any section element inside of this container is displayed as a slide -->
 			<div class="slides">
-				<section>
-					<h1>Intro Java</h1>
-					<h3>Java untuk Programmer C</h3>
-					<p>
-						<small>Created by <a href="http://fahrifirdaus.web.id">Fahri Firdausillah</a></small>
-					</p>
-				</section>				
+	<section>
+		<h1>Intro Java</h1>
+		<h3>Java untuk Programmer C</h3>
+		<p>
+			<small>Created by <a href="http://fahrifirdaus.web.id">Fahri Firdausillah</a></small>
+		</p>
+	</section>				
 
-				<section data-markdown data-markdown data-separator="^\n---\n$" data-vertical="^\n--\n$">
-					<!-- https://github.com/hakimel/reveal.js#markdown -->
-<script type="text/template">
+	<section data-markdown data-separator="^\n---\n$" data-vertical="^\n--\n$">
+		<script type="text/template">
 ## Apakah benar-benar Java?
 
 Ya untuk mata kuliah ini contoh implementasinya akan menggunakan Java.
@@ -87,14 +93,185 @@ Cukup class dan object untuk menjalankan code. Cukup itu.
 - C ada variabel global dan lokal, Java ada variabel Class &amp; variabel fungsi
 - C menggunakan struct, Java menggunakan Class
 - C menggunakan include, Java menggunakan import
-	
-</script>
-				</section>				
+- C menggunakan fungsi `main()` sebagai starting point, Java menggunakan class
+  yang memuat fungsi `public static void main(String [] args)`
 
-				<section>
-					<h1>THE END</h1>
-					<h3>BY Fahri Firdausillah / fahrifirdaus.web.id</h3>
-				</section>
+---
+
+## Yang Perlu Diingat
+
+Baik menggunakan C maupun Java, kita akan memasuki dunia pemrograman yang lebih modular
+tidak hanya semua digabungkan pada satu file saja, tapi dipisah ke dalam beberapa file.
+
+Bedanya, C menggunakan kumpulan fungsi dalam suatu header file, sedangkan Java menggunakan
+kumpulan fungsi dan variabel yang dirangkai dalam sebuah Class.
+
+---
+
+## Memulai Java
+
+Sebuah program Java minimal harus memiliki sebuah class yang memuat fungsi `main()`:
+
+Class Template <!-- .element: class="code_title" -->
+
+```java
+	class NamaClass{
+		public static void main(String [] args){
+			// Kode yang dieksekusi 
+			// saat program dijalankan
+		}
+	}
+```
+
+Contoh Class <!-- .element: class="code_title" -->
+
+```java
+	class FirstApp{
+		public static void main(String [] args){		
+			System.out.print("Inilah Java.\n");
+			System.out.print("Tidak terlalu berbeda dengan C bukan?");
+		}
+	}
+```
+
+\* catatan: nama class main harus sama persis dengan nama filenya <!-- .element: class="footnote" -->
+
+---
+
+### Pemrograman Modular (Class Modul)
+
+Agar progam dapat digunakan berulang-ulang, lebih baik kita memisahkan antara 
+program inti dan program pemanggil.
+
+Modul.java <!-- .element: class="code_title" -->
+
+```java
+	class Modul{
+		String nama;
+
+		void setNama(String nilai){
+			this.nama = nilai;
+		}
+
+		void printNama(){
+			System.out.println(this.nama);
+		}
+	}
+```
+
+--
+
+### Pemrograman Modular (Class Pemanggil)
+
+MainApp.java <!-- .element: class="code_title" -->
+
+```java
+	class ModulApp{
+		public static void main(String [] args){
+			Modul modul = new Modul();
+
+			modul.setNama("nama modul yang baru");
+			modul.printModul();
+		}
+	}
+```
+1. Buat class yang diperlukan
+2. Pada class utama, buatlah object dari kelas tersebut
+   dan masukkan dalam variabel
+3. Panggil fungsi-fungsi pada class modul melalui variabel
+   yang telah dibuat.    
+
+---
+
+### Variabel dalam Java
+
+- Sama seperti bahasa C, sebuah variabel dalam Java harus ditentukan tipe 
+  datanya terlebih dahulu, kemudian baru dituliskan nama variabelnya.
+- Semua perintah pemrograman dalam harus berada di dalam Class, termasuk variabel
+
+Mahasiswa.java <!-- .element: class="code_title" -->
+
+```java
+	class Mahasiswa{
+		String nim;
+		String nama;
+		String email, password;
+		double ipk;
+
+		// rest of the codes
+	}
+```
+
+--
+
+### Tipe Data
+
+Java dan C memiliki tipe data yang hampir sama, dengan beberapa peningkatan.
+
+- `int` untuk angka bulat
+- `double` untuk angka pecahan (ada juga `float` tapi untuk pemula lebih 
+  direkomendasikan menggunakan `double`)
+- `String` (dengan S besar) untuk teks
+- `char` untuk satu karakter
+- `boolean` bernilai true atau false
+
+--
+
+Mahasiswa.java <!-- .element: class="code_title" -->
+
+```java
+// ... kode sebelumnya
+	void penambahan(int nil1, int nil2){
+		System.out.println(nil1 + " + " + nil2 + " = " (nil1+nil2));
+	}
+
+	void inputBiodata(String nim, String nama, String email){
+		this.nim = nim;
+		this.nama = nama;
+		this.email = email;
+	}
+
+	void printBiodata(){
+		System.out.println("NIM = "+this.nim
+				+" | Nama = "+this.nama+" | Email = "+this.email);
+	}
+// ... kode setelahnya
+```
+
+* catatan: untuk menggabungkan string dengan variabel cukup dengan menggunakan 
+	"+", tidak perlu menggunakan "%s" seperti dalam C. <!-- .element: class="footnote" -->
+
+---
+
+### Kondisi &amp; Perulangan
+
+
+---
+
+### Memecah Program dengan fungsi
+
+---
+
+### Manipulasi Array
+
+---
+
+### 
+
+
+		</script>
+	</section>					
+
+	<section data-markdown data-vertical="^\n--\n$">
+		<script type="text/template">
+
+		</script>
+	</section>
+
+	<section>
+		<h1>THE END</h1>
+		<h3>BY Fahri Firdausillah / fahrifirdaus.web.id</h3>
+	</section>
 
 			</div>
 
