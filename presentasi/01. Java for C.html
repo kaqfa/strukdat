@@ -33,7 +33,7 @@
 
 		<style type="text/css">
 		.reveal code{font-weight: bold; color: #FF0}
-		.reveal pre code{font-weight: bold; color: inherit;}
+		.reveal pre code{font-weight: bold; color: inherit; font-size: 14pt;}
 		.reveal .code_title{font-size: 50%; margin-right: 6%; font-style: italic; text-align: right; color: #D9FFFC;}
 		.reveal .footnote{font-size: 65%; font-style: italic; text-align: left; color: #ff0; line-height: 130%;}
 		</style>
@@ -243,6 +243,29 @@ Mahasiswa.java <!-- .element: class="code_title" -->
 
 ---
 
+### Input dalam Java
+
+- Pemanggilan fungsi input dalam java sedikit lebih ribet dari C, namun juga
+	lebih jelas dan lebih mudah dihafal:
+
+```java
+// di bagian paling atas
+import java.util.Scanner;
+
+// kode dalam fungsi
+
+Scanner input = new Scanner(System.in);
+String namaLengkap = input.nextLine();
+String namaDepan = input.next();
+int harga = input.nextInt();
+int nilai = input.nextDouble();
+
+// kode dalam fungsi
+
+```
+
+---
+
 ### Kondisi &amp; Perulangan
 
 - Sama seperti Bahasa C, dalam Java untuk kondisi masih menggunakan
@@ -310,14 +333,248 @@ Mahasiswa.java <!-- .element: class="code_title" -->
 
 ### Memecah Program dengan fungsi
 
+- Mengapa perlu memisahkan program ke dalam fungsi &amp; class :
+	- Meningkatkan waktu kompilasi
+	- Membuat program semakin modular (hanya menggunakan fungsi yang diperlukan saja)
+	- Program lebih mudah untuk dirawat
+- Untuk memudahkan kuliah kita, mari disepakati class &amp; file yang akan kita gunakan:
+	- File main application: Berisi class yang memuat fungsi `public static void main()`.
+		Penamaan file dan class ini dengan pola seperti `StackApp`, `QueueApp`, `LinkedListApp`,
+		dan lain sebagainya.
+	- File pustaka aplikasi: Berisi class yang memuat fungsi-fungsi yang sedang kita pelajari.
+		Model penamaannya terserah asal tidak menyalahi kaidah penamaan identifier.
+
+--
+
+### Konsep Dasar fungsi
+
+Aturan mendefinisikan fungsi adalah sebagai berikut :
+
+```java
+return_type functionName( parameter list ) 
+{ 
+    body of the function 
+} 
+```
+
+- **Tipe Kembalian (void atau tipe data)**: nilai yang akan dihasilkan oleh fungsi tersebut
+- **Nama Fungsi**: digunakan sebagai identifier dan memiliki aturan penamaan yang sama 
+	seperti variabel.
+- **Parameter**: digunakan untuk memasukkan nilai dari luar fungsi ke dalam fungsi. 
+	Memiliki aturan yang sama dengan deklarasi variabel dalam C.
+- Di dalam Java, fungsi harus dimasukkan ke dalam sebuah Class
+
+--
+
+### Contoh Program Kalkulator (Library)
+
+Kalkulator.java <!-- .element: class="code_title" -->
+
+```java
+
+class Kalkulator{
+	int tambah(int nilai1, int nilai2){
+	    return nilai1+nilai2;
+	}
+
+	int kurang(int nilai1, int nilai2){
+	    return nilai1-nilai2;
+	}
+
+	double kali(int nilai1, int nilai2){
+	    return nilai1*nilai2;
+	}
+
+	double bagi(int nilai1, int nilai2){
+	    return nilai1/nilai2;
+	}
+}
+
+```
+
+--
+
+### Pemanggilan Class dan Fungsi
+
+- Jika sebuah fungsi dipanggil oleh fungsi lain pada class yang sama,
+	maka kita cukup memanggil nama fungsi itu saja. Contoh:
+
+Kalkulator.java <!-- .element: class="code_title" -->
+
+```java
+	// ... koding sebelumnya
+	
+	double kaliVersi2(int nilai1, int nilai2){
+		double hasil;
+
+		for(int i = 0; i < nilai2; i++){
+			hasil = tambah(hasil, nilai1);
+		}
+
+		return hasil;
+	}
+
+	// ... koding setelahnya
+```
+
+- Jika sebuah fungsi dipanggil oleh fungsi lain pada class yang beda,
+	maka kita harus:
+	- membentuk object dari class library dengan perintah `new`
+	- memasukkan object ke dalam sebuah variabel
+	- memanggil fungsi dari variabel tersebut
+
+--
+
+### Contoh Program Kalkulator (Main Application)
+
+```java
+
+class KalkulatorApp{
+	
+	public static void main(String [] args){
+		Kalkulator calc = new Kalkulator();
+
+		System.out.println(calc.tambah(12, 19));
+		System.out.println(calc.kurang(12, 20));
+		System.out.println(calc.kali(10, 19));
+		System.out.println(calc.bagi(15, 2));
+	}
+
+}
+
+```
+
+* dalam Java, jika library dan pemanggilnya masih dalam direktori yang sama, kita tidak perlu
+	melakukan import (dalam C include) <!-- .element: class="footnote" -->
+
+----
+
+- `Kalkulator calc = new Kalkulator()` membentuk object dari class library dengan perintah `new`
+	dan memasukkan ke dalam variabel `calc`
+- `calc.tambah(12, 19)` memanggil fungsi dari variabel `calc`
+
+
+--
+
+### Parameter Fungsi
+
+```java
+
+	int kurang(int nilai1, int nilai2){
+	    return nilai1-nilai2;
+	}
+
+	double kali(int nilai1, int nilai2){
+	    return nilai1*nilai2;
+	}
+
+```
+
+- Parameter adalah cara fungsi untuk menginputkan nilai dari luar fungsi untuk diproses
+	di dalam fungsi.
+- Deklarasi variabel memiliki cara yang sama persis dengan deklarasi variabel biasa.
+- Setiap fungsi bisa memiliki 0 hingga tidak terbatas jumlah parameter.
+
+--
+
+### Sekup Variabel fungsi &amp; Variabel Class
+
+- Sebuah variabel jika dideklarasikan di dalam sebuah fungsi (termasuk parameter) hanya
+	dapat diakses di dalam fungsi tersebut.
+- Sedangkan jika dideklarasikan di luar fungsi (tapi tetap di dalam sebuah class), maka
+	variabel tersebut dapat diakses oleh fungsi apapun yang terdapat di dalam class tersebut.
+- Hanya saja, untuk membedakan variabel fungsi dan variabel class, pengaksesan variabel 
+	class menggunakan kata kunci `this.`.
+
+```java
+class Mahasiswa{
+	String nim, nama, email;
+	double ipk;
+
+	void setIPK(int jmlSks, int totalNilai){
+		this.ipk = totalNilai/jmlSks;
+	}
+
+	void getIPK(){
+		return this.ipk;
+	}
+}
+```
+
+--
+
+### Tipe Kembalian Fungsi
+
+- Sama seperti C, semua fungsi pada Java memiliki tipe Kembalian
+- Fungsi yang tidak memiliki tipe kembalian masih harus mengembalikan tipe `void`
+- Untuk mengembalikan sebuah nilai, fungsi selalu diakhiri dengan perintah `return`
+
 ---
 
 ### Manipulasi Array
+
+- Dalam Java berbeda dengan array dalam C hanya pada saat deklarasi saja.
+	- dalam C kita deklarasi array `int nilai[10]`
+	- dalam Java cara deklarasi array adalah `int [] nilai = new int[10]`
+- Penulisan dan pengaksesannya masih dengan cara yang sama
+- Cara yang digunakan Java memudahkan programmer untuk menginisialisasi array
+	kembali di tengah program
+- Deklarasi multidimensional array `int[][] matrix = new int[10][10]`
+
+--
+
+Kalkulator.java <!-- .element: class="code_title" -->
+
+```java
+// .. koding sebelumnya
+
+int jmlHistori = 0;
+double [] histori = new double[50] 
+
+int tambah(int nilai1, int nilai2){
+  int hasil = nilai1+nilai2; 
+  histori[jmlHistori] = hasil; 
+  
+  return hasil;
+}
+
+void printHistori(){
+	for(int i = 0; i < this.jmlHistori; i++){
+		System.out.println(histori[i]);
+	}
+}
+
+// .. koding setelahnya
+```
 
 ---
 
 ### Lebih Mudah Java dibandingkan C
 
+Beberapa aspek yang membuat Java lebih mudah dibandingkan C adalah:
+
+- Java memiliki tipe data String dan kita bisa melakukan operasi berikut:
+	- `String nama = "Namaku yang Baru"`
+	- `nama.charAt(5)` untuk mengambil satu karakter dari String
+- Java dapat mendeklarasikan array di tengah aplikasi tanpa menggunakn pointer
+	- C: `int *a = malloc(N * sizeof(*a))`
+	- Java: `int[] a = new int[N]`
+- C mengakses elemen struct dengan cara yang berubah-ubah, sedangkan Java mengakses
+	elemen class dengan cara yang sama persis.
+- Contoh koding struktur data dalam Java lebih mudah dipahami daripada contoh program
+	dalam C.
+
+---
+
+### Tugas Pertama
+
+- Buatlah program untuk melakukan manipulasi matrix
+- Terlebih dahulu buatlah library (class) MatrixManipulation yang berisikan:
+	- 1 variabel class array 2 dimensi dengan nama `matrix`
+	- fungsi `void penambahanMatrix()`
+	- dan fungsi `void penguranganMatrix()`
+- Kemudian jangan lupa untuk membuat file main applicationnya untuk menguji coba
+	library yang telah dibuat
 
 		</script>
 	</section>					
