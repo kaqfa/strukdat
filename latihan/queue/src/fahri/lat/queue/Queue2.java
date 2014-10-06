@@ -49,7 +49,8 @@ public class Queue2 {
             if(isEmpty()){
                 this.head = this.tail = 1;
             } else {
-                if(this.tail == this.maxElm){
+                if(this.tail == this.maxElm /* && this.head != 1 */){
+                    // menggeser queue
                     int i = this.head;
                     int j = 1;
                     while(i <= this.tail){
@@ -62,7 +63,6 @@ public class Queue2 {
                     this.tail++;
                 }
             }
-
             this.antrian[this.tail] = data;
             System.out.println("Data: "+data+" berhasil diinputkan pada antrian ke "+(this.tail-this.head+1));
         }

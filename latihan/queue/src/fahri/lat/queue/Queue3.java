@@ -15,7 +15,8 @@ public class Queue3 {
     }
 
     boolean isFull(){
-        return (this.maxElm == nbElement());
+        return (( (this.head-this.tail) == 1) ||
+                ( (this.tail == this.maxElm) && (this.head == 1) ));
     }
 
     int nbElement(){
@@ -24,9 +25,9 @@ public class Queue3 {
         } else {
             int jumlah;
             if(this.tail > this.head){
-                jumlah = this.tail-this.head+1;
+                jumlah = this.tail - this.head + 1;
             } else {
-                jumlah = this.head-this.tail+1;
+                jumlah = this.maxElm - this.head + this.tail + 1;
             }
             return jumlah;
         }
@@ -55,7 +56,7 @@ public class Queue3 {
             if(isEmpty()){
                 this.head = this.tail = 1;
             } else {
-                if(this.tail == this.maxElm){
+                if(this.tail == this.maxElm /* && this.head != 1 */){
                     this.tail = 1;
                 } else {
                     this.tail++;

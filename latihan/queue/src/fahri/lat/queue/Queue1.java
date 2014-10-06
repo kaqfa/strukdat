@@ -63,17 +63,18 @@ public class Queue1 {
             return 0;
         } else {
             int data = this.antrian[this.head];
-            this.tail--;
-            if(0 == this.tail){
+            if(1 == this.tail){ // tinggal 1 elemen
                 this.head = 0;
             } else {
                 int i = 1;
-                while(i <= this.tail){
+                // menggeser satu persatu
+                while(i < this.tail){
                     this.antrian[i] = this.antrian[i+1];
                     this.antrian[i+1] = 0; // opsional untuk menghapus data
                     i++;
                 }
             }
+            this.tail--;
             System.out.println("Data "+data+" berhasil dikeluarkan dari antrian");
             return data;
         }
