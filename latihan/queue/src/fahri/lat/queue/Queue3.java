@@ -63,7 +63,7 @@ public class Queue3 {
                 }
             }
             this.antrian[this.tail] = data;
-            System.out.println("Data: "+data+" berhasil diinputkan pada antrian ke "+(this.tail-this.head+1));
+//            System.out.println("Data: "+data+" berhasil diinputkan pada antrian ke "+(this.tail-this.head+1));
         }
     }
 
@@ -73,7 +73,7 @@ public class Queue3 {
             return 0;
         } else {
             int data = this.antrian[this.head];
-            if(this.head == this.maxElm+1){
+            if(this.head == this.maxElm){
                 this.head = 1;
             } else {
                 if(nbElement() == 1){
@@ -82,7 +82,7 @@ public class Queue3 {
                     this.head++;
                 }
             }
-            System.out.println("Data "+data+" berhasil dikeluarkan dari antrian");
+//            System.out.println("Data "+data+" berhasil dikeluarkan dari antrian");
             return data;
         }
     }

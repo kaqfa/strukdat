@@ -64,7 +64,7 @@ public class Queue2 {
                 }
             }
             this.antrian[this.tail] = data;
-            System.out.println("Data: "+data+" berhasil diinputkan pada antrian ke "+(this.tail-this.head+1));
+//            System.out.println("Data: "+data+" berhasil diinputkan pada antrian ke "+(this.tail-this.head+1));
         }
     }
 
@@ -80,7 +80,7 @@ public class Queue2 {
                 this.head++;
             }
 
-            System.out.println("Data "+data+" berhasil dikeluarkan dari antrian");
+//            System.out.println("Data "+data+" berhasil dikeluarkan dari antrian");
             return data;
         }
     }
