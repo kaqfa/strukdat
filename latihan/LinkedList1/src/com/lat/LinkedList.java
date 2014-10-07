@@ -7,28 +7,46 @@ public class LinkedList {
 
     ListElmt first;
 
-    void createEmpty(){
+    void createEmptyList(){
         this.first = null;
     }
 
-    ListElmt alokasi(){
-        return null;
+    ListElmt createElm(int data){
+        return new ListElmt(data);
     }
 
     void dealokasi(){
 
     }
 
-    void insertFirst(int data){
-
+    ListElmt findElementByData(int dataFind){
+        return null;
     }
 
-    void insertAfter(int data){
-
+    void insertFirst(ListElmt newElm){
+        newElm.next = this.first.next;
+        this.first = newElm;
     }
 
-    void insertLast(int data){
+    void insertAfter(ListElmt newElm, ListElmt address){
+        if(null == this.first){
+            insertFirst(newElm);
+        } else {
+            newElm.next = address.next;
+            address.next = newElm;
+        }
+    }
 
+    void insertLast(ListElmt newElm){
+        if(null == this.first){
+            insertFirst(newElm);
+        } else {
+            ListElmt last = this.first;
+            while (last.next != null){
+                last = last.next;
+            }
+            insertAfter(newElm, last);
+        }
     }
 
     void delFirst(){
