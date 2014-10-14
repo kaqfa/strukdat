@@ -53,7 +53,7 @@ public class Queue1 {
                 this.tail++;
             }
             this.antrian[this.tail] = data;
-            System.out.println("Data: "+data+" berhasil diinputkan pada antrian ke "+this.tail);
+//            System.out.println("Data: "+data+" berhasil diinputkan pada antrian ke "+this.tail);
         }
     }
 
@@ -74,7 +74,7 @@ public class Queue1 {
                     i++;
                 }
             }
-            System.out.println("Data "+data+" berhasil dikeluarkan dari antrian");
+//            System.out.println("Data "+data+" berhasil dikeluarkan dari antrian");
             return data;
         }
     }

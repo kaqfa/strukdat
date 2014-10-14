@@ -2,39 +2,51 @@ package fahri.lat.queue;
 
 public class QueueApp {
 
+    public static Queue1 q1 = new Queue1();
+    public static Queue2 q2 = new Queue2();
+    public static Queue3 q3 = new Queue3();
+
+    public static void performTest(int jmlData){
+        int qSize = jmlData/10;
+        int inputRound = qSize/2;
+        int dataIn = 0;
+        q2.createEmpty(qSize);
+
+        System.out.println("uji coba dimulai");
+
+        // isi hingga queue full
+        while(dataIn < qSize){
+            q2.enqueue((int)(Math.random()*100));
+            dataIn++;
+            System.out.println("data ke "+dataIn);
+        }
+        while(dataIn < jmlData){
+            int delCount = 0;
+            // hapus setengah
+            while (delCount < inputRound){
+                q2.dequeue();
+                delCount++;
+            }
+            // tambah lagi setengah
+            while (delCount > 0){
+                q2.enqueue((int)(Math.random()*100));
+                dataIn++;
+                System.out.println("data ke "+dataIn);
+                delCount--;
+            }
+        }
+        // terakhir masih ada setengah data, dihapus sekalian
+        for(int delCount = 0;delCount < inputRound; delCount++){
+            q2.dequeue();
+        }
+
+        System.out.println("selesai menguji coba sebanyak "+jmlData+" data");
+    }
+
     public static void main(String[] args) {
-        Queue3 antri = new Queue3();
 
-        antri.createEmpty(10);
+        int[] jmlData = {10}; //, 10000, 100000, 1000000
 
-        antri.enqueue(17);
-        antri.enqueue(34);
-        antri.enqueue(23);
-        antri.enqueue(5);
-        antri.enqueue(56);
-        antri.enqueue(90);
-        antri.enqueue(32);
-        antri.enqueue(23);
-        antri.enqueue(64);
-        antri.enqueue(54);
-        antri.enqueue(76);
-        antri.enqueue(21);
-        antri.enqueue(88);
-
-        antri.dequeue();
-        antri.dequeue();
-        antri.dequeue();
-        antri.dequeue();
-        antri.dequeue();
-        antri.dequeue();
-        antri.dequeue();
-        antri.dequeue();
-        antri.dequeue();
-        antri.dequeue();
-        antri.dequeue();
-        antri.dequeue();
-        antri.dequeue();
-        antri.dequeue();
-        antri.dequeue();
+        performTest(100);
     }
 }

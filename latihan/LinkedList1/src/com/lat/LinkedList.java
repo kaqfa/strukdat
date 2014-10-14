@@ -1,8 +1,6 @@
 package com.lat;
 
-/**
- * Created by kaqfa on 07/10/14.
- */
+
 public class LinkedList {
 
     ListElmt first;
@@ -15,17 +13,31 @@ public class LinkedList {
         return new ListElmt(data);
     }
 
-    void dealokasi(){
-
-    }
-
     ListElmt findElementByData(int dataFind){
-        return null;
+        ListElmt current = this.first;
+
+        if(this.first == null){
+            return null;
+        } else {
+            while(current != null){
+                if(current.info == dataFind){
+                    return current;
+                } else {
+                    current = current.next;
+                }
+            }
+            return null;
+        }
     }
 
     void insertFirst(ListElmt newElm){
-        newElm.next = this.first.next;
-        this.first = newElm;
+        try {
+            newElm.next = this.first;
+            this.first = newElm;
+        } catch (NullPointerException e){
+            e.printStackTrace();
+        }
+
     }
 
     void insertAfter(ListElmt newElm, ListElmt address){
@@ -49,21 +61,64 @@ public class LinkedList {
         }
     }
 
-    void delFirst(){
+    ListElmt delFirst(){
+        ListElmt current = this.first;
 
+        if(this.first.next == null){
+            this.first = null;
+        } else {
+            this.first = this.first.next;
+        }
+
+        return current;
     }
 
-    void delLast(){
+    ListElmt delLast(){
+        ListElmt last = this.first;
+        ListElmt prevLast = last;
 
+        if(this.first == null){
+            return null;
+        } else if(this.first.next == null) {
+            this.first = null;
+        } else {
+            while(last.next != null){
+                prevLast = last;
+                last = last.next;
+            }
+
+            prevLast.next = null;
+        }
+
+        return last;
     }
 
-    void delAfter(ListElmt address){
+    ListElmt delAfter(ListElmt addressPrev){
+        ListElmt current = addressPrev.next;
 
+        addressPrev.next = current.next;
+        current.next = null;
+
+        return current;
+    }
+
+    void printAllElement(){
+        ListElmt current = this.first;
+
+        while(current != null){
+            System.out.println("Isi dari linked list adalah: "+current.info);
+            current = current.next;
+        }
     }
 
     int nbElement(){
-        return 0;
-    }
+        int count = 0;
+        ListElmt current = this.first;
+        while(current != null){
+            count++;
+            current = current.next;
+        }
 
-    /* rest of optional functions */
+        return count;
+    }
 }
