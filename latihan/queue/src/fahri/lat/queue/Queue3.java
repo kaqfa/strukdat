@@ -27,7 +27,11 @@ public class Queue3 {
             if(this.tail > this.head){
                 jumlah = this.tail - this.head + 1;
             } else {
+<<<<<<< HEAD
                 jumlah = this.maxElm - this.head + this.tail + 1;
+=======
+                jumlah = (this.maxElm - this.head)+this.tail+1;
+>>>>>>> sore hari
             }
             return jumlah;
         }

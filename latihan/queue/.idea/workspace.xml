@@ -23,6 +23,7 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
+<<<<<<< HEAD
       <file leaf-file-name="QueueApp.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/fahri/lat/queue/QueueApp.java">
           <provider selected="true" editor-type-id="text-editor">
@@ -69,11 +70,20 @@
         </entry>
       </file>
       <file leaf-file-name="Queue3.java" pinned="false" current="false" current-in-tab="false">
+=======
+      <file leaf-file-name="Queue3.java" pinned="false" current="true" current-in-tab="true">
+>>>>>>> sore hari
         <entry file="file://$PROJECT_DIR$/src/fahri/lat/queue/Queue3.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="905" max-vertical-offset="1350">
-              <caret line="74" column="39" selection-start-line="74" selection-start-column="39" selection-end-line="74" selection-end-column="39" />
-              <folding />
+            <state vertical-scroll-proportion="0.12353923" vertical-offset="226" max-vertical-offset="1380">
+              <caret line="22" column="20" selection-start-line="22" selection-start-column="20" selection-end-line="22" selection-end-column="20" />
+              <folding>
+                <element signature="docComment;class#Queue3#0" expanded="false" />
+                <element signature="e#176#177#0" expanded="true" />
+                <element signature="e#233#234#0" expanded="true" />
+                <element signature="e#256#257#0" expanded="true" />
+                <element signature="e#307#308#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -81,24 +91,9 @@
       <file leaf-file-name="Queue2.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/fahri/lat/queue/Queue2.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="538" max-vertical-offset="1335">
-              <caret line="80" column="13" selection-start-line="80" selection-start-column="13" selection-end-line="80" selection-end-column="13" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="315" max-vertical-offset="1335">
+              <caret line="29" column="39" selection-start-line="29" selection-start-column="39" selection-end-line="29" selection-end-column="39" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Queue1.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/fahri/lat/queue/Queue1.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="688" max-vertical-offset="1305">
-              <caret line="56" column="9" selection-start-line="56" selection-start-column="9" selection-end-line="56" selection-end-column="9" />
-              <folding>
-                <element signature="e#177#178#0" expanded="true" />
-                <element signature="e#234#235#0" expanded="true" />
-                <element signature="e#257#258#0" expanded="true" />
-                <element signature="e#324#325#0" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -115,12 +110,18 @@
       <list>
         <option value="$PROJECT_DIR$/src/fahri/lat/queue/QueueApp.java" />
         <option value="$PROJECT_DIR$/src/fahri/lat/queue/Queue1.java" />
+<<<<<<< HEAD
         <option value="$PROJECT_DIR$/src/fahri/lat/queue/Queue3.java" />
 <<<<<<< HEAD
 =======
         <option value="$PROJECT_DIR$/src/fahri/lat/queue/Queue2.java" />
         <option value="$PROJECT_DIR$/src/fahri/lat/queue/QueueApp.java" />
 >>>>>>> origin/master
+=======
+        <option value="$PROJECT_DIR$/src/fahri/lat/queue/Queue2.java" />
+        <option value="$PROJECT_DIR$/src/fahri/lat/queue/QueueApp.java" />
+        <option value="$PROJECT_DIR$/src/fahri/lat/queue/Queue3.java" />
+>>>>>>> sore hari
       </list>
     </option>
   </component>
@@ -356,17 +357,24 @@
     <frame x="-8" y="-8" width="1040" height="754" extended-state="6" />
 =======
     <frame x="0" y="26" width="1366" height="742" extended-state="6" />
+<<<<<<< HEAD
 >>>>>>> origin/master
     <editor active="false" />
+=======
+    <editor active="true" />
+>>>>>>> sore hari
     <layout>
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
 <<<<<<< HEAD
+<<<<<<< HEAD
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
 =======
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+=======
+>>>>>>> sore hari
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -392,6 +400,7 @@
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.15429688" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32921174" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -426,72 +435,137 @@
     <entry file="file://$PROJECT_DIR$/src/fahri/lat/queue/QueueApp.java">
       <provider selected="true" editor-type-id="text-editor">
 <<<<<<< HEAD
+<<<<<<< HEAD
         <state vertical-scroll-proportion="0.0" vertical-offset="85" max-vertical-offset="782">
           <caret line="5" column="14" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="14" />
+=======
+        <state vertical-scroll-proportion="0.0" vertical-offset="435" max-vertical-offset="870">
+          <caret line="29" column="35" selection-start-line="29" selection-start-column="35" selection-end-line="29" selection-end-column="35" />
+>>>>>>> sore hari
           <folding />
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/src/fahri/lat/queue/Queue1.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="873" max-vertical-offset="1496">
           <caret line="71" column="56" selection-start-line="71" selection-start-column="56" selection-end-line="71" selection-end-column="56" />
           <folding />
+=======
+    <entry file="file://$PROJECT_DIR$/src/fahri/lat/queue/Queue3.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="691" max-vertical-offset="1350">
+          <caret line="61" column="17" selection-start-line="61" selection-start-column="17" selection-end-line="61" selection-end-column="17" />
+          <folding>
+            <element signature="docComment;class#Queue3#0" expanded="false" />
+            <element signature="e#176#177#0" expanded="true" />
+            <element signature="e#233#234#0" expanded="true" />
+            <element signature="e#256#257#0" expanded="true" />
+            <element signature="e#307#308#0" expanded="true" />
+          </folding>
+>>>>>>> sore hari
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/fahri/lat/queue/Queue2.java">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state vertical-scroll-proportion="0.0" vertical-offset="734" max-vertical-offset="1581">
           <caret line="51" column="67" selection-start-line="51" selection-start-column="44" selection-end-line="51" selection-end-column="67" />
+=======
+        <state vertical-scroll-proportion="0.0" vertical-offset="1200" max-vertical-offset="1395">
+          <caret line="80" column="13" selection-start-line="80" selection-start-column="13" selection-end-line="80" selection-end-column="13" />
+>>>>>>> sore hari
           <folding />
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/src/fahri/lat/queue/Queue3.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="204" max-vertical-offset="1615">
           <caret line="12" column="21" selection-start-line="12" selection-start-column="21" selection-end-line="12" selection-end-column="21" />
+=======
+    <entry file="file://$PROJECT_DIR$/src/fahri/lat/queue/Queue1.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="840" max-vertical-offset="1305">
+          <caret line="56" column="9" selection-start-line="56" selection-start-column="9" selection-end-line="56" selection-end-column="9" />
+>>>>>>> sore hari
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/fahri/lat/queue/QueueApp.java">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="782">
           <caret line="26" column="24" selection-start-line="26" selection-start-column="24" selection-end-line="26" selection-end-column="24" />
+=======
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="870">
+          <caret line="29" column="35" selection-start-line="29" selection-start-column="35" selection-end-line="29" selection-end-column="35" />
+>>>>>>> sore hari
           <folding />
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/src/fahri/lat/queue/Queue1.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="1156" max-vertical-offset="1479">
           <caret line="68" column="26" selection-start-line="68" selection-start-column="26" selection-end-line="68" selection-end-column="26" />
           <folding />
+=======
+    <entry file="file://$PROJECT_DIR$/src/fahri/lat/queue/Queue3.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="1110" max-vertical-offset="1410">
+          <caret line="74" column="39" selection-start-line="74" selection-start-column="39" selection-end-line="74" selection-end-column="39" />
+          <folding>
+            <element signature="docComment;class#Queue3#0" expanded="false" />
+            <element signature="e#176#177#0" expanded="true" />
+            <element signature="e#233#234#0" expanded="true" />
+            <element signature="e#256#257#0" expanded="true" />
+            <element signature="e#307#308#0" expanded="true" />
+          </folding>
+>>>>>>> sore hari
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/fahri/lat/queue/Queue2.java">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state vertical-scroll-proportion="0.0" vertical-offset="1343" max-vertical-offset="1581">
           <caret line="79" column="28" selection-start-line="79" selection-start-column="28" selection-end-line="79" selection-end-column="28" />
+=======
+        <state vertical-scroll-proportion="0.0" vertical-offset="1200" max-vertical-offset="1395">
+          <caret line="80" column="13" selection-start-line="80" selection-start-column="13" selection-end-line="80" selection-end-column="13" />
+>>>>>>> sore hari
           <folding />
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/src/fahri/lat/queue/Queue3.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="665" max-vertical-offset="1581">
           <caret line="72" column="21" selection-start-line="72" selection-start-column="21" selection-end-line="72" selection-end-column="21" />
+=======
+    <entry file="file://$PROJECT_DIR$/src/fahri/lat/queue/Queue1.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="688" max-vertical-offset="1305">
+          <caret line="56" column="9" selection-start-line="56" selection-start-column="9" selection-end-line="56" selection-end-column="9" />
+>>>>>>> sore hari
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/fahri/lat/queue/QueueApp.java">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="782">
 =======
+=======
+>>>>>>> sore hari
         <state vertical-scroll-proportion="0.0" vertical-offset="70" max-vertical-offset="690">
 >>>>>>> origin/master
           <caret line="26" column="24" selection-start-line="26" selection-start-column="24" selection-end-line="26" selection-end-column="24" />
@@ -566,8 +640,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/fahri/lat/queue/Queue1.java">
+    <entry file="file://$PROJECT_DIR$/src/fahri/lat/queue/QueueApp.java">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
 <<<<<<< HEAD
         <state vertical-scroll-proportion="0.0" vertical-offset="873" max-vertical-offset="1496">
           <caret line="71" column="56" selection-start-line="71" selection-start-column="56" selection-end-line="71" selection-end-column="56" />
@@ -582,11 +657,17 @@
             <element signature="e#324#325#0" expanded="true" />
           </folding>
 >>>>>>> origin/master
+=======
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="870">
+          <caret line="29" column="35" selection-start-line="29" selection-start-column="35" selection-end-line="29" selection-end-column="35" />
+          <folding />
+>>>>>>> sore hari
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/fahri/lat/queue/Queue2.java">
+    <entry file="file://$PROJECT_DIR$/src/fahri/lat/queue/Queue1.java">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
 <<<<<<< HEAD
         <state vertical-scroll-proportion="0.0" vertical-offset="734" max-vertical-offset="1581">
           <caret line="51" column="67" selection-start-line="51" selection-start-column="44" selection-end-line="51" selection-end-column="67" />
@@ -594,10 +675,15 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="538" max-vertical-offset="1335">
           <caret line="80" column="13" selection-start-line="80" selection-start-column="13" selection-end-line="80" selection-end-column="13" />
 >>>>>>> origin/master
+=======
+        <state vertical-scroll-proportion="0.32387313" vertical-offset="586" max-vertical-offset="1245">
+          <caret line="56" column="9" selection-start-line="56" selection-start-column="9" selection-end-line="56" selection-end-column="9" />
+>>>>>>> sore hari
           <folding />
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/src/fahri/lat/queue/QueueApp.java">
       <provider selected="true" editor-type-id="text-editor">
 <<<<<<< HEAD
@@ -607,12 +693,19 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="905" max-vertical-offset="1350">
           <caret line="74" column="39" selection-start-line="74" selection-start-column="39" selection-end-line="74" selection-end-column="39" />
 >>>>>>> origin/master
+=======
+    <entry file="file://$PROJECT_DIR$/src/fahri/lat/queue/Queue2.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="315" max-vertical-offset="1335">
+          <caret line="29" column="39" selection-start-line="29" selection-start-column="39" selection-end-line="29" selection-end-column="39" />
+>>>>>>> sore hari
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/fahri/lat/queue/Queue3.java">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
 <<<<<<< HEAD
         <state vertical-scroll-proportion="0.0" vertical-offset="204" max-vertical-offset="1581">
           <caret line="12" column="21" selection-start-line="12" selection-start-column="21" selection-end-line="12" selection-end-column="21" />
@@ -621,6 +714,17 @@
           <caret line="29" column="35" selection-start-line="29" selection-start-column="35" selection-end-line="29" selection-end-column="35" />
 >>>>>>> origin/master
           <folding />
+=======
+        <state vertical-scroll-proportion="0.12353923" vertical-offset="226" max-vertical-offset="1380">
+          <caret line="22" column="20" selection-start-line="22" selection-start-column="20" selection-end-line="22" selection-end-column="20" />
+          <folding>
+            <element signature="docComment;class#Queue3#0" expanded="false" />
+            <element signature="e#176#177#0" expanded="true" />
+            <element signature="e#233#234#0" expanded="true" />
+            <element signature="e#256#257#0" expanded="true" />
+            <element signature="e#307#308#0" expanded="true" />
+          </folding>
+>>>>>>> sore hari
         </state>
       </provider>
     </entry>
