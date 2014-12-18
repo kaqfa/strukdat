@@ -35,6 +35,7 @@ Icon
 # Files that might appear on external disk
 .Spotlight-V100
 .Trashes
+<<<<<<< HEAD
 /latihan/Netbeans/Perkenalan/nbproject/private/
 /latihan/Netbeans/DemoStack/nbproject/private/
 /latihan/Netbeans/QueueDemo/nbproject/private/
@@ -43,3 +44,6 @@ Icon
 /latihan/Netbeans/Algo_Analysis_case/nbproject/private/
 /latihan/Netbeans/StudyCase/nbproject/private/
 /latihan/Netbeans/StudyCase/build/
+=======
+/java/UAS/UAS2014/nbproject/private/
+>>>>>>> yang ada di sini
