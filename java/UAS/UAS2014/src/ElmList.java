@@ -19,18 +19,25 @@ class ElmList {
         this.detik = detik;
     }
     
+    public int toSecond(){
+        return ElmList.timeToSecond(this.jam, this.menit, this.detik);
+    }
     
-    
-    public int timeToSecond(){
-        int seconds = 0;
+    public static int timeToSecond(int jam, int menit, int detik){
+        int seconds = jam*3600;
+        seconds += menit*60;
+        seconds += detik;
+        
         return seconds;
     }
     
     public void secondToTime(int second){
-        
+        this.jam = second/3600;
+        this.menit = (second % 3600)/60;
+        this.detik = ((second % 3600) % 60);
     }
     
     public void printTime(){
-        System.out.println("1");
+        System.out.println(this.jam+":"+this.menit+":"+this.detik);
     }
 }
