@@ -2,7 +2,7 @@
  *
  * @author kaqfa
  */
-import java.util.Stack; 
+import java.util.Stack;
 
 class Tree {
 
@@ -13,98 +13,77 @@ class Tree {
         root = null;
     }
 
-    public Node find(int key)
-    {                      
-        Node current = root;   
-        while (current.data != key) 
-        {
-            if (key < current.data) 
-            {
+    public Node find(int key) {
+        Node current = root;
+        while (current.data != key) {
+            if (key < current.data) {
                 current = current.leftChild;
-            } else 
-            {
+            } else {
                 current = current.rightChild;
             }
-            if (current == null)
-            {
-                return null;                
+            if (current == null) {
+                return null;
             }
         }
-        return current;            
-    }  
+        return current;
+    }
 
     public void insert(int data) {
         Node newNode = new Node();
         newNode.data = data;
-        if (root == null) 
-        {
+        if (root == null) {
             root = newNode;
-        } else 
-        {
-            Node current = root;       
+        } else {
+            Node current = root;
             Node parent;
-            while (true) 
-            {
+            while (true) {
                 parent = current;
-                if (data < current.data) 
-                {
+                if (data < current.data) {
                     current = current.leftChild;
-                    if (current == null) 
-                    {               
+                    if (current == null) {
                         parent.leftChild = newNode;
                         return;
                     }
-                } 
-                else 
-                {
+                } else {
                     current = current.rightChild;
-                    if (current == null) 
-                    {                 
+                    if (current == null) {
                         parent.rightChild = newNode;
                         return;
                     }
-                }  
-            }  
-        }  
-    } 
+                }
+            }
+        }
+    }
 
-    public boolean delete(int data) 
-    {                           
+    public boolean delete(int data) {
         Node current = root;
         Node parent = root;
         boolean isLeftChild = true;
 
-        while (current.data != data)
-        {
+        while (current.data != data) {
             parent = current;
-            if (data < current.data) 
-            {
+            if (data < current.data) {
                 isLeftChild = true;
                 current = current.leftChild;
-            } else 
-            {
+            } else {
                 isLeftChild = false;
                 current = current.rightChild;
             }
-            if (current == null) 
-            {
-                return false;             
+            if (current == null) {
+                return false;
             }
-        } 
+        }
 
         if (current.leftChild == null
                 && current.rightChild == null) {
-            if (current == root)
-            {
-                root = null;               
+            if (current == root) {
+                root = null;
             } else if (isLeftChild) {
-                parent.leftChild = null; 
-            } else
-            {
+                parent.leftChild = null;
+            } else {
                 parent.rightChild = null;
             }
-        } 
-        else if (current.rightChild == null) {
+        } else if (current.rightChild == null) {
             if (current == root) {
                 root = current.leftChild;
             } else if (isLeftChild) {
@@ -112,8 +91,7 @@ class Tree {
             } else {
                 parent.rightChild = current.leftChild;
             }
-        }
-        else if (current.leftChild == null) {
+        } else if (current.leftChild == null) {
             if (current == root) {
                 root = current.rightChild;
             } else if (isLeftChild) {
@@ -121,8 +99,7 @@ class Tree {
             } else {
                 parent.rightChild = current.rightChild;
             }
-        } else 
-        {
+        } else {
             Node successor = getSuccessor(current);
 
             if (current == root) {
@@ -134,23 +111,21 @@ class Tree {
             }
 
             successor.leftChild = current.leftChild;
-        }  
-        return true;                              
-    }  
+        }
+        return true;
+    }
 
     private Node getSuccessor(Node delNode) {
         Node successorParent = delNode;
         Node successor = delNode;
-        Node current = delNode.rightChild;   
-        while (current != null) 
-        {                                
+        Node current = delNode.rightChild;
+        while (current != null) {
             successorParent = successor;
             successor = current;
-            current = current.leftChild;      
+            current = current.leftChild;
         }
-        
-        if (successor != delNode.rightChild) 
-        {                                 
+
+        if (successor != delNode.rightChild) {
             successorParent.leftChild = successor.rightChild;
             successor.rightChild = delNode.rightChild;
         }
@@ -175,27 +150,27 @@ class Tree {
         System.out.println();
     }
 
-    private void preOrder(Node localRoot) {
-        if (localRoot != null) {
-            System.out.print(localRoot.data + " ");
-            preOrder(localRoot.leftChild);
-            preOrder(localRoot.rightChild);
+    private void preOrder(Node curNode) {
+        if (curNode != null) {
+            System.out.print(curNode.data + " ");
+            preOrder(curNode.leftChild);
+            preOrder(curNode.rightChild);
         }
     }
 
-    private void inOrder(Node localRoot) {
-        if (localRoot != null) {
-            inOrder(localRoot.leftChild);
-            System.out.print(localRoot.data + " ");
-            inOrder(localRoot.rightChild);
+    private void inOrder(Node curNode) {
+        if (curNode != null) {
+            inOrder(curNode.leftChild);
+            System.out.print(curNode.data + " ");
+            inOrder(curNode.rightChild);
         }
     }
 
-    private void postOrder(Node localRoot) {
-        if (localRoot != null) {
-            postOrder(localRoot.leftChild);
-            postOrder(localRoot.rightChild);
-            System.out.print(localRoot.data + " ");
+    private void postOrder(Node curNode) {
+        if (curNode != null) {
+            postOrder(curNode.leftChild);
+            postOrder(curNode.rightChild);
+            System.out.print(curNode.data + " ");
         }
     }
 
@@ -233,14 +208,14 @@ class Tree {
                 for (int j = 0; j < nBlanks * 2 - 2; j++) {
                     System.out.print(' ');
                 }
-            } 
+            }
             System.out.println();
             nBlanks /= 2;
             while (localStack.isEmpty() == false) {
                 globalStack.push(localStack.pop());
             }
-        }  
+        }
         System.out.println(
                 "......................................................");
-    }  
-} 
+    }
+}
