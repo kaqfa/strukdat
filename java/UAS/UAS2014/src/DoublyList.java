@@ -4,9 +4,9 @@
  */
 public class DoublyList {
 
-    private ElmList first;
-    private ElmList last;
-    private ElmList current;
+    private TimeList first;
+    private TimeList last;
+    private TimeList current;
 
     public DoublyList() // constructor
     {
@@ -18,8 +18,8 @@ public class DoublyList {
         return first == null;
     }
 
-    public void insertFirst(long dd) {
-        ElmList newLink = new ElmList();
+    public void addFirst(int jam, int menit, int detik) {
+        TimeList newLink = new TimeList(jam, menit, detik);
 
         if (isEmpty()) {
             last = newLink;
@@ -30,8 +30,8 @@ public class DoublyList {
         first = newLink;
     }
 
-    public void insertLast(long dd) {
-        ElmList newLink = new ElmList();
+    public void addLast(int jam, int menit, int detik) {
+        TimeList newLink = new TimeList(jam, menit, detik);
         if (isEmpty()) {
             first = newLink;
         } else {
@@ -41,8 +41,8 @@ public class DoublyList {
         last = newLink;
     }
 
-    public ElmList deleteFirst() {
-        ElmList temp = first;
+    public TimeList deleteFirst() {
+        TimeList temp = first;
         if (first.next == null) {
             last = null;
         } else {
@@ -52,8 +52,8 @@ public class DoublyList {
         return temp;
     }
 
-    public ElmList deleteLast() {
-        ElmList temp = last;
+    public TimeList deleteLast() {
+        TimeList temp = last;
         if (first.next == null) {
             first = null;
         } else {
@@ -63,15 +63,15 @@ public class DoublyList {
         return temp;
     }
 
-    public boolean insertAfter(long key, long dd) {
-        ElmList current = first;
-        while (current.jam != key) {
+    public boolean addAfter(int jKey, int mKey, int dKey, int jam, int menit, int detik) {
+        TimeList current = first;
+        while (current.toSecond() != TimeList.timeToSecond(jKey, mKey, dKey)) {
             current = current.next;
             if (current == null) {
                 return false;
             }
         }
-        ElmList newLink = new ElmList();
+        TimeList newLink = new TimeList(jam, menit, detik);
 
         if (current == last) {
             newLink.next = null;
@@ -86,9 +86,9 @@ public class DoublyList {
         return true;
     }
 
-    public ElmList deleteTime(int jam, int menit, int detik) {
+    public TimeList deleteTime(int jam, int menit, int detik) {
         this.current = this.first;
-        while (current.toSecond() != ElmList.timeToSecond(jam, menit, detik)) {
+        while (current.toSecond() != TimeList.timeToSecond(jam, menit, detik)) {
             current = current.next;
             if (current == null) {
                 return null;
@@ -106,5 +106,35 @@ public class DoublyList {
             current.next.prev = current.prev;
         }
         return current;
+    }
+    
+    public TimeList getCurrent(){
+        return this.current;
+    }
+    
+    public boolean hasNext(){
+        return (this.current.next != null);
+    }
+    
+    public boolean hasPrev(){
+        return (this.current.prev != null);
+    }
+    
+    public void moveNext(){
+        this.current = this.current.next;
+    }
+    
+    public void movePrev(){
+        this.current = this.current.prev;
+    }
+    
+    public TimeList moveToFirst(){
+        this.current = this.first;
+        return this.current;
+    }
+    
+    public TimeList moveToLast(){
+        this.current = this.last;
+        return this.current;
     }
 }

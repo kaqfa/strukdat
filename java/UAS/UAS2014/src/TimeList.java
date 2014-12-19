@@ -7,20 +7,21 @@
  *
  * @author kaqfa
  */
-class ElmList {
+class TimeList {
     int jam, menit, detik;    
-    ElmList prev, next;
+    TimeList prev;
+    TimeList next;
     
-    public ElmList(){ }
+    public TimeList(){ }
     
-    public ElmList(int jam, int menit, int detik){
+    public TimeList(int jam, int menit, int detik){
         this.jam = jam;
         this.menit = menit;
         this.detik = detik;
     }
     
     public int toSecond(){
-        return ElmList.timeToSecond(this.jam, this.menit, this.detik);
+        return TimeList.timeToSecond(this.jam, this.menit, this.detik);
     }
     
     public static int timeToSecond(int jam, int menit, int detik){
