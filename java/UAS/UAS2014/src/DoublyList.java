@@ -1,7 +1,3 @@
-/**
- *
- * @author kaqfa
- */
 public class DoublyList {
 
     private TimeList first;

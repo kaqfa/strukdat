@@ -7,10 +7,10 @@
  *
  * @author kaqfa
  */
-public class DemoList {
+public class TestList {
     DoublyList  dl = new DoublyList();
     
-    public DemoList(){
+    public TestList(){
         this.fillData();
     }
     
@@ -57,7 +57,7 @@ public class DemoList {
     }
     
     public static void main(String[] args) {
-        DemoList demo = new DemoList();
+        TestList demo = new TestList();
         demo.printAll();
         if(demo.findTime(15, 32, 8) == true){
             System.out.println("Waktu yang dicari ditemukan");
