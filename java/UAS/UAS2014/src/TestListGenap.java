@@ -1,16 +1,7 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-/**
- *
- * @author kaqfa
- */
-public class TestList {
+public class TestListGenap {
     DoublyList  dl = new DoublyList();
     
-    public TestList(){
+    public TestListGenap(){
         this.fillData();
     }
     
@@ -19,13 +10,13 @@ public class TestList {
         dl.addLast(8, 22, 12);
         dl.addLast(13, 16, 9);
         dl.addLast(12, 9, 40);
-        dl.addLast(3, 52, 42);
+        dl.addLast(3, 130, 42);
         dl.addLast(22, 57, 00);
         dl.addLast(14, 32, 6);
-        dl.addLast(5, 13, 11);
+        dl.addLast(5, 67, 11);
         dl.addLast(3, 22, 22);
         dl.addLast(10, 43, 11);
-        dl.addLast(6, 55, 25);
+        dl.addLast(6, 55, 99);
         dl.addLast(7, 00, 13);
         dl.addLast(15, 32, 14);
     }
@@ -43,27 +34,45 @@ public class TestList {
         }
     }
     
-    public boolean findTime(int jam, int menit, int detik){
+    public void findTime(int jam, int menit, int detik){
         if(! dl.isEmpty()){
             dl.moveToFirst();
             while(dl.getCurrent() != null){
                 if(dl.getCurrent().toSecond() == TimeList.timeToSecond(jam, menit, detik)){                    
-                    return true;
+                    System.out.println("Waktu "+jam+":"+menit+":"+detik+" ditemukan");
                 }
                 dl.moveNext();
             }
         }
-        return false;
+        System.out.println("Tidak ditemukan waktu "+jam+":"+menit+":"+detik);
+    }
+    
+    
+    /**
+     * Fungsi printTimeGap2H merupakan fungsi yang menampilkan (print)
+     * semua list waktu yang memiliki gap (lebih dari atau kurang dari)
+     * 2 jam dibandingkan waktu pertamanya.
+     * */
+    public void printTimeGap2H(){
+        
+    }
+    
+    
+    /**
+     * Fungsi invalidToZero merupakan fungsi untuk mengubah semua list
+     * waktu yang invalid menjadi 00:00:00.
+     * */
+    public void invalidToZero(){
+        
     }
     
     public static void main(String[] args) {
-        TestList demo = new TestList();
+        TestListGenap demo = new TestListGenap();
         demo.printAll();
-        if(demo.findTime(15, 32, 8) == true){
-            System.out.println("Waktu yang dicari ditemukan");
-        } else {
-            System.out.println("Tidak ditemukan waktu yang dicari");
-        }
-        
+        demo.findTime(15, 32, 8);
+        demo.printTimeGap2H();
+        demo.invalidToZero();
+        System.out.println("=== setelah yang invalid diubah menjadi 0 ===");
+        demo.printAll();
     }
 }
