@@ -9,35 +9,43 @@ package lat.queuedemo;
  *
  * @author kaqfa
  */
-public class Queue1 {
+public class Queue1 implements Queue{
     int maxElm;
     int [] antrian;
 
-    int head;
-    int tail;
+    int first;
+    int last;
 
-    boolean isEmpty(){
-        return (0 == this.head && 0 == this.tail);
+    @Override
+    public boolean isEmpty(){
+        return (-1 == this.first && -1 == this.last);
     }
 
-    boolean isFull(){
-        return (1 == this.head && this.maxElm == this.tail);
+    @Override
+    public boolean isFull(){
+        return (1 == this.first && this.maxElm == this.last);
     }
 
     int nbElement(){
         if(isEmpty()){
             return 0;
         } else {
-            return this.tail;
+            return this.last;
         }
     }
+    
+    @Override
+    public boolean isOneElement(){
+        return (this.last == 0);
+    }
 
-    void createEmpty(int size){
+    @Override
+    public void createEmpty(int size){
         this.antrian = new int[size+1];
         if(this.antrian.length > 0){
             this.maxElm = size;
-            this.head = 0;
-            this.tail = 0;
+            this.first = 0;
+            this.last = 0;
         } else {
             this.maxElm = 0;
         }
@@ -48,39 +56,39 @@ public class Queue1 {
         this.maxElm = 0;
     }
 
-    void enqueue(int data){
+    @Override
+    public void add(int data){
         if(isFull()){
-            System.out.println("Antriannya sudah penuh");
+//            System.out.println("Antriannya sudah penuh");
         } else {
             if(isEmpty()){
-                this.head = this.tail = 1;
+                this.first = this.last = 1;
             } else {
-                this.tail++;
+                this.last++;
             }
-            this.antrian[this.tail] = data;
-//            System.out.println("Data: "+data+" berhasil diinputkan pada antrian ke "+this.tail);
+            this.antrian[this.last] = data;
         }
     }
 
-    int dequeue(){
+    @Override
+    public int remove(){
         if(isEmpty()){
-            System.out.println("Antriannya sudah kosong");
+//            System.out.println("Antriannya sudah kosong");
             return 0;
         } else {
-            int data = this.antrian[this.head];
-            if(1 == this.tail){ // tinggal 1 elemen
-                this.head = 0;
+            int data = this.antrian[this.first];
+            if(1 == this.last){ // tinggal 1 elemen
+                this.first = 0;
             } else {
                 int i = 1;
                 // menggeser satu persatu
-                while(i < this.tail){
+                while(i < this.last){
                     this.antrian[i] = this.antrian[i+1];
                     this.antrian[i+1] = 0; // opsional untuk menghapus data
                     i++;
                 }
             }
-            this.tail--;
-            System.out.println("Data "+data+" berhasil dikeluarkan dari antrian");
+            this.last--;
 //            System.out.println("Data "+data+" berhasil dikeluarkan dari antrian");
             return data;
         }
